@@ -24,13 +24,13 @@ RUN \
     yarn && \
   echo "**** download thelounge ****" && \
   if [ -z ${THELOUNGE_VERSION+x} ]; then \
-    THELOUNGE_VERSION=$(curl -sX GET "https://api.github.com/repos/thelounge/thelounge/releases/latest" | jq -r '. | .tag_name'); \
+    THELOUNGE_VERSION=$(curl -sX GET "https://api.github.com/repos/winterberryteastories/thelounge/releases/latest" | jq -r '. | .tag_name'); \
   fi && \
   mkdir -p \
     /app/thelounge && \
   curl -o \
     /tmp/thelounge.tar.gz -L \
-    "https://github.com/thelounge/thelounge/archive/refs/tags/${THELOUNGE_VERSION}.tar.gz" && \
+    "https://github.com/winterberryteastories/thelounge/archive/refs/tags/${THELOUNGE_VERSION}.tar.gz" && \
   tar xf \
     /tmp/thelounge.tar.gz -C \
     /app/thelounge --strip-components=1 && \
