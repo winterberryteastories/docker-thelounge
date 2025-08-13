@@ -23,9 +23,7 @@ RUN \
   apk add --no-cache \
     yarn && \
   echo "**** download thelounge ****" && \
-  if [ -z ${THELOUNGE_VERSION+x} ]; then \
-    THELOUNGE_VERSION=$(curl -sX GET "https://api.github.com/repos/winterberryteastories/thelounge/releases/latest" | jq -r '. | .tag_name'); \
-  fi && \
+  THELOUNGE_VERSION=latest \
   mkdir -p \
     /app/thelounge && \
   curl -o \
